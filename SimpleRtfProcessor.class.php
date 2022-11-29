@@ -35,10 +35,10 @@
 class SimpleRtfProcessor {
 	
 	private const REPLACMENTS = [
-							   '\\' => "\\\\",
-							   '{'  => "\{",
-							   '}'  => "\}"
-								];	
+					'\\' => "\\\\",
+					'{'  => "\{",
+					'}'  => "\}"
+				    ];	
 	private const EXTENTION = ["rtf", "doc", "docx"];
 	private $documentContent;
 	private $replaceVariables = array();
