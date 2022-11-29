@@ -8,13 +8,13 @@
  *   [SOMEVALUE_C]
  *   [SOMEVALUE_L]
  *
- *	Example usage
+ * Example usage
  *    $replaceVars = array(
- *          'someValue' => 'Lorem ipsum...',
- *  		'someValue_C  => 'Lorem ipsum... \r\n Lorem ipsum...', # sufix "_C" clear new lines 'Lorem ipsum... Lorem ipsum...'
- *          'someValue' => "array('Lorem ipsum...','Lorem ipsum...','Lorem ipsum...')", # each in new line
- *          'someValue_L => "array('Lorem ipsum...','Lorem ipsum...','Lorem ipsum...')", # sufix "_L" continue list
- *			);
+ *           'someValue' => 'Lorem ipsum...',
+ *  	     'someValue_C  => 'Lorem ipsum... \r\n Lorem ipsum...', # sufix "_C" clear new lines 'Lorem ipsum... Lorem ipsum...'
+ *           'someValue' => "array('Lorem ipsum...','Lorem ipsum...','Lorem ipsum...')", # each in new line
+ *           'someValue_L => "array('Lorem ipsum...','Lorem ipsum...','Lorem ipsum...')", # sufix "_L" continue list
+ *	);
  *		
  *	try{
  *		$file = new SimpleRtfProcessor($replaceVars, "file_template.rtf");
@@ -63,8 +63,7 @@ class SimpleRtfProcessor {
 		echo $this->documentContent;
 	}
 	
-	
-	 /**
+     /**
      * @throws \Exception
      */
 	public function getFilePath($fileName) {
@@ -91,7 +90,7 @@ class SimpleRtfProcessor {
 		
 		foreach($this->replaceVariables as $key=>$value) {
 			
-            $key = strtoupper($key);
+                        $key = strtoupper($key);
 			
 			if (is_array($value)){
 				foreach ($value as $k=>$v) {
@@ -104,7 +103,7 @@ class SimpleRtfProcessor {
 				$v = str_replace("\r\n", $type, trim($this->escapeValue($value)));
 				$this->replaceValue($key, $v);
 			} 
-        }
+        	}
 	}
 	
 	private function escapeValue($value) {
